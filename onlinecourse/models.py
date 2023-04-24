@@ -106,7 +106,7 @@ class Question(models.Model):
 	course = models.ForeignKey(Course, on_delete=models.CASCADE)
 	
     # question text
-	content = models.CharField(max_length=200, default="content")
+	question_text = models.CharField(max_length=200, default="content")
 	
     # question grade/mark
 	grade = models.IntegerField(default=0)
@@ -129,7 +129,7 @@ def is_get_score(self, selected_ids):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice = models.CharField(max_length=1000)
+    choice_text = models.CharField(max_length=1000)
     is_correct = models.BooleanField(default=False)
 
 
